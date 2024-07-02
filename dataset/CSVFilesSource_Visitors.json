@@ -1,0 +1,23 @@
+{
+	"name": "CSVFilesSource_Visitors",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobStoragePowerBI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "visitors.csv",
+				"container": "powerbi-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
