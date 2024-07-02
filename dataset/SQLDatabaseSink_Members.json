@@ -1,0 +1,12 @@
+{
+	"name": "SQLDatabaseSink_Members",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_PowerBI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyDataToSQL",
-				"description": "Copies data from Blob Storage to SQL database",
+				"name": "CopyDataToSQL1",
+				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -27,11 +27,32 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "CSVFilesSource",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDatabaseSink_Members",
 						"type": "DatasetReference"
 					}
 				]
