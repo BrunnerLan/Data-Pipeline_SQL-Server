@@ -46,7 +46,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSVFilesSource",
+						"referenceName": "CSVFilesSource_Members",
 						"type": "DatasetReference"
 					}
 				],

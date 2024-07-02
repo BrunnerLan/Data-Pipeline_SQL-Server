@@ -1,5 +1,5 @@
 {
-	"name": "CSVFilesSource",
+	"name": "CSVFilesSource_Members",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "BlobStoragePowerBI",
