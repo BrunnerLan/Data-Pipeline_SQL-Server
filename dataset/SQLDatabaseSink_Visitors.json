@@ -1,0 +1,16 @@
+{
+	"name": "SQLDatabaseSink_Visitors",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_PowerBI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "visitors"
+		}
+	}
+}
