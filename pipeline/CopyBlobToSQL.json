@@ -61,7 +61,14 @@
 				"name": "CopyDataToSQL2",
 				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -116,7 +123,14 @@
 				"name": "CopyDataToSQL3",
 				"description": "Copies data from Blob Storage to SQL database <canceled>",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -171,7 +185,14 @@
 				"name": "CopyDataToSQL4",
 				"description": "Copies data from Blob Storage to SQL database <frozen>",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL3",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
