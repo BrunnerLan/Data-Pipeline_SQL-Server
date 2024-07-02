@@ -1,0 +1,292 @@
+{
+	"name": "CSVFilesSource_Canceled",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobStoragePowerBI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "canceled.csv",
+				"container": "powerbi-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "First Name",
+				"type": "String"
+			},
+			{
+				"name": "Last Name",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "2nd Phone",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "2nd Email",
+				"type": "String"
+			},
+			{
+				"name": "Date of birth",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Zip code",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			},
+			{
+				"name": "Membership",
+				"type": "String"
+			},
+			{
+				"name": "Membership 1",
+				"type": "String"
+			},
+			{
+				"name": "Membership 1 Start Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 1 End Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 1 Credits",
+				"type": "String"
+			},
+			{
+				"name": "Membership 2",
+				"type": "String"
+			},
+			{
+				"name": "Membership 2 Start Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 2 End Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 2 Credits",
+				"type": "String"
+			},
+			{
+				"name": "Membership 3",
+				"type": "String"
+			},
+			{
+				"name": "Membership 3 Start Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 3 End Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 3 Credits",
+				"type": "String"
+			},
+			{
+				"name": "Membership 4",
+				"type": "String"
+			},
+			{
+				"name": "Membership 4 Start Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 4 End Date",
+				"type": "String"
+			},
+			{
+				"name": "Membership 4 Credits",
+				"type": "String"
+			},
+			{
+				"name": "Contacts",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 1",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 1 Number",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 2",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 2 Number",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 3",
+				"type": "String"
+			},
+			{
+				"name": "Contacts 3 Number",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "Joined",
+				"type": "String"
+			},
+			{
+				"name": "Check-in code",
+				"type": "String"
+			},
+			{
+				"name": "Last Visit",
+				"type": "String"
+			},
+			{
+				"name": "Last Payment",
+				"type": "String"
+			},
+			{
+				"name": "Last Login",
+				"type": "String"
+			},
+			{
+				"name": "Notes",
+				"type": "String"
+			},
+			{
+				"name": "Ranks",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 1",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 1 Level",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 1 Date",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 2",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 2 Level",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 2 Date",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 3",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 3 Level",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 3 Date",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 4",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 4 Level",
+				"type": "String"
+			},
+			{
+				"name": "Ranks 4 Date",
+				"type": "String"
+			},
+			{
+				"name": "Beruf",
+				"type": "String"
+			},
+			{
+				"name": "Erste Zahlung am:",
+				"type": "String"
+			},
+			{
+				"name": "Austritts Datum:",
+				"type": "String"
+			},
+			{
+				"name": "AHV-Nummer",
+				"type": "String"
+			},
+			{
+				"name": "Familien Account",
+				"type": "String"
+			},
+			{
+				"name": "Grund Kündigung",
+				"type": "String"
+			},
+			{
+				"name": "Start Pausierung",
+				"type": "String"
+			},
+			{
+				"name": "Ende Pausierung",
+				"type": "String"
+			}
+		]
+	}
+}
