@@ -1,0 +1,24 @@
+{
+	"name": "CSVFilesSource_Frozen",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobStoragePowerBI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "frozen.csv",
+				"container": "powerbi-data"
+			},
+			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
