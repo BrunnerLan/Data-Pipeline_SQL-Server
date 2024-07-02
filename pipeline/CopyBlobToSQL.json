@@ -6,6 +6,8 @@
 				"name": "CopyDataToSQL1",
 				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
@@ -61,6 +63,8 @@
 				"name": "CopyDataToSQL2",
 				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL1",
@@ -123,6 +127,8 @@
 				"name": "CopyDataToSQL3",
 				"description": "Copies data from Blob Storage to SQL database <canceled>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL2",
