@@ -1,0 +1,14 @@
+{
+	"name": "AzureSqlDatabase_PowerBI_Entra",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqlserverraiondojo.database.windows.net",
+			"database": "PowerBI",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
