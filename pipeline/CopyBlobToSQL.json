@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.members;",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
@@ -90,6 +91,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.visitors;",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
@@ -151,6 +153,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.canceled;",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
