@@ -191,6 +191,8 @@
 				"name": "CopyDataToSQL4",
 				"description": "Copies data from Blob Storage to SQL database <frozen>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL3",
