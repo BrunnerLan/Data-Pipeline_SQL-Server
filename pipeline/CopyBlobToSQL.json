@@ -265,10 +265,16 @@
 				"userProperties": []
 			},
 			{
-				"name": "ForEach1",
-				"type": "ForEach",
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
 				"dependsOn": [],
-				"userProperties": []
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
