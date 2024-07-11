@@ -5,7 +5,8 @@
 		"type": "AzureFunction",
 		"typeProperties": {
 			"functionAppUrl": "https://gymdesksync.azurewebsites.net",
-			"authentication": "Anonymous"
+			"authentication": "MSI",
+			"resourceId": ""
 		}
 	}
 }
