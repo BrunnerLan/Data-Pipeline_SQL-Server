@@ -6,7 +6,7 @@
 		"typeProperties": {
 			"functionAppUrl": "https://gymdesksync.azurewebsites.net",
 			"authentication": "MSI",
-			"resourceId": ""
+			"resourceId": "gymdesksync"
 		}
 	}
 }
