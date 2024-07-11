@@ -6,8 +6,9 @@
 		"type": "AzureFunction",
 		"typeProperties": {
 			"functionAppUrl": "https://gymdesksync.azurewebsites.net",
-			"authentication": "Anonymous",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDNDRTRDRDVDLUQzOTUtNEZGRi1CQjk2LTg3MjdDQjc2MDZCRl81NmY1YWRhNS02NzViLTQ2MWQtODJiMS0yMGI0ZDU1NWMxNWQiDQp9"
+			"authentication": "MSI",
+			"resourceId": "",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDNDRTRDRDVDLUQzOTUtNEZGRi1CQjk2LTg3MjdDQjc2MDZCRl82MGVlZGFiZi03NWUxLTQ4ZjktOGY0Yy05OWY3OGNjYTVmYjIiDQp9"
 		}
 	}
 }
