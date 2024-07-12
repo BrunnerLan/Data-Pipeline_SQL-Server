@@ -252,7 +252,7 @@
 				]
 			},
 			{
-				"name": "Azure Function1",
+				"name": "AzureFunctionGymDeskToBlob",
 				"type": "AzureFunctionActivity",
 				"dependsOn": [],
 				"policy": {
