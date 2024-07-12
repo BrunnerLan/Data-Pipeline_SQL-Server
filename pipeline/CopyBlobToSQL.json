@@ -257,7 +257,7 @@
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
-					"retry": 3,
+					"retry": 1,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": true,
 					"secureInput": true
