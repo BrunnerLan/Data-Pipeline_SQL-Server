@@ -70,6 +70,8 @@
 				"name": "CopyDataToSQL2",
 				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL1",
@@ -132,6 +134,8 @@
 				"name": "CopyDataToSQL3",
 				"description": "Copies data from Blob Storage to SQL database <canceled>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL2",
@@ -194,6 +198,8 @@
 				"name": "CopyDataToSQL4",
 				"description": "Copies data from Blob Storage to SQL database <frozen>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL3",
