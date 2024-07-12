@@ -6,8 +6,6 @@
 				"name": "CopyDataToSQL1",
 				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "AzureFunctionGymDeskToBlob",
@@ -70,8 +68,6 @@
 				"name": "CopyDataToSQL2",
 				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL1",
@@ -134,8 +130,6 @@
 				"name": "CopyDataToSQL3",
 				"description": "Copies data from Blob Storage to SQL database <canceled>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL2",
@@ -198,8 +192,6 @@
 				"name": "CopyDataToSQL4",
 				"description": "Copies data from Blob Storage to SQL database <frozen>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL3",
@@ -261,8 +253,6 @@
 			{
 				"name": "AzureFunctionGymDeskToBlob",
 				"type": "AzureFunctionActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
