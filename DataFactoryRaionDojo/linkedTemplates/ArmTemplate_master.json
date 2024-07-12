@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataFactoryRaionDojo"
+		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
+		"AzureSqlDatabase_PowerBI_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_PowerBI'"
+		},
+		"BlobStoragePowerBI_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStoragePowerBI'"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://gymdesksync.azurewebsites.net"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-svr-rd-1.database.windows.net"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "PowerBI"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "manuel.brunner"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DataFactoryRaionDojo_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureFunction1_functionKey": {
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
+					"AzureSqlDatabase_PowerBI_password": {
+						"value": "[parameters('AzureSqlDatabase_PowerBI_password')]"
+					},
+					"BlobStoragePowerBI_connectionString": {
+						"value": "[parameters('BlobStoragePowerBI_connectionString')]"
+					},
+					"AzureFunction1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
+					},
+					"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_PowerBI_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

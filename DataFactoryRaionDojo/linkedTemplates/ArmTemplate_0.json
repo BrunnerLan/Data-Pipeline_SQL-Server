@@ -1,0 +1,870 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataFactoryRaionDojo"
+		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
+		"AzureSqlDatabase_PowerBI_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_PowerBI'"
+		},
+		"BlobStoragePowerBI_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStoragePowerBI'"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://gymdesksync.azurewebsites.net"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-svr-rd-1.database.windows.net"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "PowerBI"
+		},
+		"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "manuel.brunner"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureFunction1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureFunction",
+				"typeProperties": {
+					"functionAppUrl": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]",
+					"authentication": "MSI",
+					"resourceId": "c229f445-3320-4e09-8c4a-d022935c6ffb",
+					"functionKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase_PowerBI')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Data connection Azure Data Factory to SQL Server",
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_server')]",
+					"database": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('AzureSqlDatabase_PowerBI_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BlobStoragePowerBI')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Connection Azure Blob Storage to Data Factory",
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('BlobStoragePowerBI_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CSVFilesSource_Canceled')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "BlobStoragePowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "canceled.csv",
+						"container": "powerbi-data"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "First Name",
+						"type": "String"
+					},
+					{
+						"name": "Last Name",
+						"type": "String"
+					},
+					{
+						"name": "Phone",
+						"type": "String"
+					},
+					{
+						"name": "2nd Phone",
+						"type": "String"
+					},
+					{
+						"name": "Email",
+						"type": "String"
+					},
+					{
+						"name": "2nd Email",
+						"type": "String"
+					},
+					{
+						"name": "Date of birth",
+						"type": "String"
+					},
+					{
+						"name": "Age",
+						"type": "String"
+					},
+					{
+						"name": "Address",
+						"type": "String"
+					},
+					{
+						"name": "City",
+						"type": "String"
+					},
+					{
+						"name": "State",
+						"type": "String"
+					},
+					{
+						"name": "Country",
+						"type": "String"
+					},
+					{
+						"name": "Zip code",
+						"type": "String"
+					},
+					{
+						"name": "Gender",
+						"type": "String"
+					},
+					{
+						"name": "Type",
+						"type": "String"
+					},
+					{
+						"name": "Membership",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Contacts",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 1",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 1 Number",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 2",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 2 Number",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 3",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 3 Number",
+						"type": "String"
+					},
+					{
+						"name": "Status",
+						"type": "String"
+					},
+					{
+						"name": "Joined",
+						"type": "String"
+					},
+					{
+						"name": "Check-in code",
+						"type": "String"
+					},
+					{
+						"name": "Last Visit",
+						"type": "String"
+					},
+					{
+						"name": "Last Payment",
+						"type": "String"
+					},
+					{
+						"name": "Last Login",
+						"type": "String"
+					},
+					{
+						"name": "Notes",
+						"type": "String"
+					},
+					{
+						"name": "Ranks",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4 Date",
+						"type": "String"
+					},
+					{
+						"name": "Beruf",
+						"type": "String"
+					},
+					{
+						"name": "Erste Zahlung am:",
+						"type": "String"
+					},
+					{
+						"name": "Austritts Datum:",
+						"type": "String"
+					},
+					{
+						"name": "AHV-Nummer",
+						"type": "String"
+					},
+					{
+						"name": "Familien Account",
+						"type": "String"
+					},
+					{
+						"name": "Grund Kündigung",
+						"type": "String"
+					},
+					{
+						"name": "Start Pausierung",
+						"type": "String"
+					},
+					{
+						"name": "Ende Pausierung",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/BlobStoragePowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CSVFilesSource_Frozen')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "BlobStoragePowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "frozen.csv",
+						"container": "powerbi-data"
+					},
+					"columnDelimiter": ",",
+					"rowDelimiter": "\n",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/BlobStoragePowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CSVFilesSource_Members')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "BlobStoragePowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "members.csv",
+						"container": "powerbi-data"
+					},
+					"columnDelimiter": ",",
+					"rowDelimiter": "\n",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/BlobStoragePowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CSVFilesSource_Visitors')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "BlobStoragePowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "visitors.csv",
+						"container": "powerbi-data"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/BlobStoragePowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDatabaseSink_Canceled')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_PowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "canceled"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_PowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDatabaseSink_Frozen')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_PowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "frozen"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_PowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDatabaseSink_Members')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_PowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "members"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_PowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDatabaseSink_Visitors')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_PowerBI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "visitors"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_PowerBI')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyBlobToSQL')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CopyDataToSQL1",
+						"description": "Copies data from Blob Storage to SQL database <members>",
+						"type": "Copy",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.00:15:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": true,
+							"secureInput": true
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE dbo.members;",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "CSVFilesSource_Members",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDatabaseSink_Members",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "CopyDataToSQL2",
+						"description": "Copies data from Blob Storage to SQL database <visitors>",
+						"type": "Copy",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
+						"dependsOn": [
+							{
+								"activity": "CopyDataToSQL1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.00:15:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": true,
+							"secureInput": true
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE dbo.visitors;",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "CSVFilesSource_Visitors",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDatabaseSink_Visitors",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "CopyDataToSQL3",
+						"description": "Copies data from Blob Storage to SQL database <canceled>",
+						"type": "Copy",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
+						"dependsOn": [
+							{
+								"activity": "CopyDataToSQL2",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.00:15:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": true,
+							"secureInput": true
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE dbo.canceled;",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "CSVFilesSource_Canceled",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDatabaseSink_Canceled",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "CopyDataToSQL4",
+						"description": "Copies data from Blob Storage to SQL database <frozen>",
+						"type": "Copy",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
+						"dependsOn": [
+							{
+								"activity": "CopyDataToSQL3",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.00:15:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": true,
+							"secureInput": true
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE dbo.frozen;",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "CSVFilesSource_Frozen",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDatabaseSink_Frozen",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Azure Function1",
+						"type": "AzureFunctionActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"functionName": "gymdeskSyncTrigger",
+							"headers": {},
+							"method": "GET"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureFunction1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Members')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Members')]",
+				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Visitors')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Visitors')]",
+				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Canceled')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Canceled')]",
+				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Frozen')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Frozen')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureFunction1')]"
+			]
+		}
+	]
+}
