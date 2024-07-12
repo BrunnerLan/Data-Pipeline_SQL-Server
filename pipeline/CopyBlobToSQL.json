@@ -266,10 +266,6 @@
 				"typeProperties": {
 					"functionName": "gymdeskSyncTrigger",
 					"method": "GET"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureFunction1",
-					"type": "LinkedServiceReference"
 				}
 			}
 		],
