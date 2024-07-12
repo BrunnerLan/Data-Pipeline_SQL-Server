@@ -5,17 +5,14 @@
 		"factoryName": {
 			"value": "DataFactoryRaionDojo"
 		},
-		"AzureFunction1_functionKey": {
-			"value": ""
-		},
 		"AzureSqlDatabase_PowerBI_password": {
 			"value": ""
 		},
 		"BlobStoragePowerBI_connectionString": {
 			"value": ""
 		},
-		"AzureFunction1_properties_typeProperties_functionAppUrl": {
-			"value": "https://gymdesksync.azurewebsites.net"
+		"AzureFunctionGymdeskSync_functionKey": {
+			"value": ""
 		},
 		"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
 			"value": "sql-svr-rd-1.database.windows.net"
@@ -25,6 +22,9 @@
 		},
 		"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
 			"value": "manuel.brunner"
+		},
+		"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
+			"value": "https://gymdesksync.azurewebsites.net"
 		},
 		"containerUri": {
 			"value": ""

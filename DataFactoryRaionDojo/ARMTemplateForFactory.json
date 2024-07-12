@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "DataFactoryRaionDojo"
 		},
-		"AzureFunction1_functionKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
-		},
 		"AzureSqlDatabase_PowerBI_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_PowerBI'"
@@ -19,9 +15,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStoragePowerBI'"
 		},
-		"AzureFunction1_properties_typeProperties_functionAppUrl": {
-			"type": "string",
-			"defaultValue": "https://gymdesksync.azurewebsites.net"
+		"AzureFunctionGymdeskSync_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunctionGymdeskSync'"
 		},
 		"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
 			"type": "string",
@@ -34,6 +30,10 @@
 		"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "manuel.brunner"
+		},
+		"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://gymdesksync.azurewebsites.net"
 		}
 	},
 	"variables": {
@@ -304,15 +304,15 @@
 						]
 					},
 					{
-						"name": "Azure Function1",
+						"name": "AzureFunctionGymDeskToBlob",
 						"type": "AzureFunctionActivity",
 						"dependsOn": [],
 						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
+							"timeout": "0.00:15:00",
+							"retry": 1,
 							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
+							"secureOutput": true,
+							"secureInput": true
 						},
 						"userProperties": [],
 						"typeProperties": {
@@ -321,7 +321,7 @@
 							"method": "GET"
 						},
 						"linkedServiceName": {
-							"referenceName": "AzureFunction1",
+							"referenceName": "AzureFunctionGymdeskSync",
 							"type": "LinkedServiceReference"
 						}
 					}
@@ -340,7 +340,7 @@
 				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Canceled')]",
 				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Frozen')]",
 				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Frozen')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureFunction1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureFunctionGymdeskSync')]"
 			]
 		},
 		{
@@ -811,25 +811,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureFunction1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureFunction",
-				"typeProperties": {
-					"functionAppUrl": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]",
-					"authentication": "MSI",
-					"resourceId": "c229f445-3320-4e09-8c4a-d022935c6ffb",
-					"functionKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureFunction1_functionKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase_PowerBI')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -862,6 +843,25 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('BlobStoragePowerBI_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureFunctionGymdeskSync')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureFunction",
+				"typeProperties": {
+					"functionAppUrl": "[parameters('AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl')]",
+					"authentication": "MSI",
+					"resourceId": "/subscriptions/3bc628a9-d072-4919-81ee-7a886a9aa605/resourceGroups/raiondojo/providers/Microsoft.Web/sites/gymdesksync",
+					"functionKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureFunctionGymdeskSync_functionKey')]"
+					}
 				}
 			},
 			"dependsOn": []
