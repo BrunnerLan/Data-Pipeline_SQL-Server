@@ -257,15 +257,19 @@
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
-					"retry": 0,
+					"retry": 3,
 					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
+					"secureOutput": true,
+					"secureInput": true
 				},
 				"userProperties": [],
 				"typeProperties": {
 					"functionName": "gymdeskSyncTrigger",
 					"method": "GET"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureFunctionGymdeskSync",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
