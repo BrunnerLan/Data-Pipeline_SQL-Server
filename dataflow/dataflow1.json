@@ -5,10 +5,6 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "CSVFilesSource_Members",
-						"type": "DatasetReference"
-					},
 					"name": "CSVSourceCheckInCode",
 					"description": "Remove empty lines"
 				}
@@ -21,8 +17,7 @@
 			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> CSVSourceCheckInCode",
+				"     validateSchema: false) ~> CSVSourceCheckInCode",
 				"CSVSourceCheckInCode filter(ERROR_FUNCTION('!isNull([Check-in code]) && length(trim([Check-in code])) > 0__NEW_LINE_N____NEW_LINE_N____NEW_LINE_N____NEW_LINE_N__')) ~> FilterEmptyCheckInCode"
 			]
 		}
