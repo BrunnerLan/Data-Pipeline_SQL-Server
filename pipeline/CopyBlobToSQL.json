@@ -46,13 +46,6 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
-								"sink": {
-									"name": "ID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
 								"source": {
 									"name": "First Name",
 									"type": "String",
@@ -257,6 +250,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 1 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 1 Start Date",
 									"type": "String",
@@ -300,6 +298,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 2 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 2 Start Date",
 									"type": "String",
@@ -343,6 +346,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 3 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 3 Start Date",
 									"type": "String",
@@ -386,6 +394,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 4 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
