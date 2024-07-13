@@ -238,6 +238,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 1 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 1 Start Date",
 									"type": "DateTime",
