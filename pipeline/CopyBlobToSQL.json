@@ -6,8 +6,6 @@
 				"name": "CopyDataToSQL1",
 				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "GymDeskToBlobStorage",
