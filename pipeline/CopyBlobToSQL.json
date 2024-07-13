@@ -829,8 +829,7 @@
 						"typeConversionSettings": {
 							"allowDataTruncation": false,
 							"treatBooleanAsNumber": false,
-							"dateFormat": "dd/MM/yyyy",
-							"culture": "de-CH"
+							"dateFormat": "dd/MM/yyyy"
 						}
 					}
 				},
