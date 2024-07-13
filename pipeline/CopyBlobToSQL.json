@@ -886,11 +886,16 @@
 			},
 			{
 				"name": "CopyDataToSQL2",
-				"description": "Copies data from Blob Storage to SQL database <members>",
+				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -1724,13 +1729,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSVFilesSource_Members",
+						"referenceName": "CSVFilesSource_Visitors",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQLDatabaseSink_Members",
+						"referenceName": "SQLDatabaseSink_Visitors",
 						"type": "DatasetReference"
 					}
 				]
