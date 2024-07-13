@@ -24,7 +24,7 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> CSVSourceCheckInCode",
-				"CSVSourceCheckInCode filter(!isNull(CheckInCode) && length(trim(CheckInCode)) > 0) ~> FilterEmptyCheckInCode"
+				"CSVSourceCheckInCode filter(ERROR_FUNCTION('!isNull(CheckInCode) && length(trim(Check-in code)) > 0')) ~> FilterEmptyCheckInCode"
 			]
 		}
 	}
