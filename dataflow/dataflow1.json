@@ -5,14 +5,20 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "CSVSourceCheckInCode"
+					"dataset": {
+						"referenceName": "CSVFilesSource_Members",
+						"type": "DatasetReference"
+					},
+					"name": "CSVSourceCheckInCode",
+					"description": "Remove empty lines"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> CSVSourceCheckInCode"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> CSVSourceCheckInCode"
 			]
 		}
 	}
