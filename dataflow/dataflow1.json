@@ -16,8 +16,7 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "FilterEmptyCheckInCode",
-					"description": "Filter rows with empty Check-in code\n"
+					"name": "FilterEmptyCheckInCode"
 				}
 			],
 			"scriptLines": [
