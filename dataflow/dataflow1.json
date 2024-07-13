@@ -16,14 +16,15 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "FilterEmptyCheckInCode",
+					"description": "Filter rows with empty Check-in code\n"
 				}
 			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> CSVSourceCheckInCode",
-				"CSVSourceCheckInCode filter(ERROR_FUNCTION('')) ~> filter1"
+				"CSVSourceCheckInCode filter(!isNull(CheckInCode) && length(trim(CheckInCode)) > 0) ~> FilterEmptyCheckInCode"
 			]
 		}
 	}
