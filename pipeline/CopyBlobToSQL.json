@@ -382,6 +382,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 4 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
@@ -756,6 +761,10 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Austritts Datum",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Austritts Datum",
 									"type": "String",
