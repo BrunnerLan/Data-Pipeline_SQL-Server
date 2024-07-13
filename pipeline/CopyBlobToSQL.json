@@ -762,7 +762,8 @@
 							},
 							{
 								"source": {
-									"name": "Austritts Datum",
+									"name": "Austritts Datum:",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
