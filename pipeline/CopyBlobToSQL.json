@@ -46,6 +46,13 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
 								"source": {
 									"name": "First Name",
 									"type": "String",
@@ -238,11 +245,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 1 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 1 Start Date",
 									"type": "DateTime",
