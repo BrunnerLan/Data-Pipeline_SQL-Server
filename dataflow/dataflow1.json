@@ -13,7 +13,11 @@
 					"description": "Remove empty lines"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "FilterEmptyCheckInCode"
@@ -93,7 +97,11 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> CSVSourceCheckInCode",
 				"CSVSourceCheckInCode filter(!isNull({Check-in code}) && length(trim(toString({Check-in code}))) > 0",
-				") ~> FilterEmptyCheckInCode"
+				") ~> FilterEmptyCheckInCode",
+				"FilterEmptyCheckInCode sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
