@@ -46,6 +46,13 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
 								"source": {
 									"name": "First Name",
 									"type": "String",
@@ -125,8 +132,8 @@
 								},
 								"sink": {
 									"name": "Date of birth",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -137,8 +144,8 @@
 								},
 								"sink": {
 									"name": "Age",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -257,8 +264,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -269,8 +276,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -281,8 +288,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 Credits",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "Boolean",
+									"physicalType": "bit"
 								}
 							},
 							{
@@ -298,15 +305,10 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 2 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 2 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -317,8 +319,8 @@
 								},
 								"sink": {
 									"name": "Membership 2 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -329,8 +331,8 @@
 								},
 								"sink": {
 									"name": "Membership 2 Credits",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "Boolean",
+									"physicalType": "bit"
 								}
 							},
 							{
@@ -346,15 +348,10 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 3 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 3 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -365,8 +362,8 @@
 								},
 								"sink": {
 									"name": "Membership 3 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -377,8 +374,8 @@
 								},
 								"sink": {
 									"name": "Membership 3 Credits",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "Boolean",
+									"physicalType": "bit"
 								}
 							},
 							{
@@ -394,15 +391,10 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 4 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 4 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -413,8 +405,8 @@
 								},
 								"sink": {
 									"name": "Membership 4 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -425,8 +417,8 @@
 								},
 								"sink": {
 									"name": "Membership 4 Credits",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "Boolean",
+									"physicalType": "bit"
 								}
 							},
 							{
@@ -533,8 +525,8 @@
 								},
 								"sink": {
 									"name": "Joined",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -557,8 +549,8 @@
 								},
 								"sink": {
 									"name": "Last Visit",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -569,8 +561,8 @@
 								},
 								"sink": {
 									"name": "Last Payment",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -581,8 +573,8 @@
 								},
 								"sink": {
 									"name": "Last Login",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
@@ -641,8 +633,8 @@
 								},
 								"sink": {
 									"name": "Ranks 1 Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -677,8 +669,8 @@
 								},
 								"sink": {
 									"name": "Ranks 2 Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -713,8 +705,8 @@
 								},
 								"sink": {
 									"name": "Ranks 3 Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -749,8 +741,8 @@
 								},
 								"sink": {
 									"name": "Ranks 4 Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -773,8 +765,8 @@
 								},
 								"sink": {
 									"name": "Erste Zahlung am:",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -785,8 +777,8 @@
 								},
 								"sink": {
 									"name": "Austritts Datum:",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -833,8 +825,8 @@
 								},
 								"sink": {
 									"name": "Start Pausierung",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -845,15 +837,18 @@
 								},
 								"sink": {
 									"name": "Ende Pausierung",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							}
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
+							"treatBooleanAsNumber": false,
+							"dateFormat": "dd.MM.yyyy",
+							"dateTimeFormat": "dd.MM.yyyy HH:mm",
+							"culture": "de-CH"
 						}
 					}
 				},
@@ -866,6 +861,198 @@
 				"outputs": [
 					{
 						"referenceName": "SQLDatabaseSink_Members",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "CopyDataToSQL2",
+				"description": "Copies data from Blob Storage to SQL database <visitors>",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.00:15:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.visitors;",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSVFilesSource_Visitors",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDatabaseSink_Visitors",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "CopyDataToSQL3",
+				"description": "Copies data from Blob Storage to SQL database <canceled>",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.00:15:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.canceled;",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSVFilesSource_Canceled",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDatabaseSink_Canceled",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "CopyDataToSQL4",
+				"description": "Copies data from Blob Storage to SQL database <frozen>",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL3",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.00:15:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.frozen;",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSVFilesSource_Frozen",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDatabaseSink_Frozen",
 						"type": "DatasetReference"
 					}
 				]
