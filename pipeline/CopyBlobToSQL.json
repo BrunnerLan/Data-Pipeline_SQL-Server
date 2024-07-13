@@ -89,7 +89,14 @@
 			{
 				"name": "Switch1",
 				"type": "Switch",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "GymDeskToBlobStorage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"cases": []
