@@ -382,11 +382,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 4 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
@@ -569,8 +564,8 @@
 								},
 								"sink": {
 									"name": "Last Login",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
