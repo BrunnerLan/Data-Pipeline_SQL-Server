@@ -8,7 +8,14 @@
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "GymDeskToBlobStorage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -84,27 +91,6 @@
 				"linkedServiceName": {
 					"referenceName": "AzureFunctionGymdeskSync",
 					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "SwitchCopyData",
-				"description": "=> Copy Data to SQL Server\n=> Copy Data to Sharepoint",
-				"type": "Switch",
-				"dependsOn": [
-					{
-						"activity": "GymDeskToBlobStorage",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"cases": [
-						{
-							"value": "Case1"
-						}
-					]
 				}
 			}
 		],
