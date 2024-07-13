@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "DataFactoryRaionDojo"
 		},
+		"AzureFunctionGymdeskSync_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunctionGymdeskSync'"
+		},
 		"AzureSqlDatabase_PowerBI_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_PowerBI'"
@@ -15,9 +19,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStoragePowerBI'"
 		},
-		"AzureFunctionGymdeskSync_functionKey": {
+		"HttpSharePointService_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'functionKey' of 'AzureFunctionGymdeskSync'"
+			"metadata": "Secure string for 'password' of 'HttpSharePointService'"
+		},
+		"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://gymdesksync.azurewebsites.net"
 		},
 		"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
 			"type": "string",
@@ -31,9 +39,13 @@
 			"type": "string",
 			"defaultValue": "manuel.brunner"
 		},
-		"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
+		"HttpSharePointService_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://gymdesksync.azurewebsites.net"
+			"defaultValue": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo"
+		},
+		"HttpSharePointService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "manuel.brunner@raion-dojo.ch"
 		},
 		"containerUri": {
 			"type": "string",
@@ -62,14 +74,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureFunctionGymdeskSync_functionKey": {
+						"value": "[parameters('AzureFunctionGymdeskSync_functionKey')]"
+					},
 					"AzureSqlDatabase_PowerBI_password": {
 						"value": "[parameters('AzureSqlDatabase_PowerBI_password')]"
 					},
 					"BlobStoragePowerBI_connectionString": {
 						"value": "[parameters('BlobStoragePowerBI_connectionString')]"
 					},
-					"AzureFunctionGymdeskSync_functionKey": {
-						"value": "[parameters('AzureFunctionGymdeskSync_functionKey')]"
+					"HttpSharePointService_password": {
+						"value": "[parameters('HttpSharePointService_password')]"
+					},
+					"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl')]"
 					},
 					"AzureSqlDatabase_PowerBI_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_server')]"
@@ -80,8 +98,11 @@
 					"AzureSqlDatabase_PowerBI_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase_PowerBI_properties_typeProperties_userName')]"
 					},
-					"AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl": {
-						"value": "[parameters('AzureFunctionGymdeskSync_properties_typeProperties_functionAppUrl')]"
+					"HttpSharePointService_properties_typeProperties_url": {
+						"value": "[parameters('HttpSharePointService_properties_typeProperties_url')]"
+					},
+					"HttpSharePointService_properties_typeProperties_userName": {
+						"value": "[parameters('HttpSharePointService_properties_typeProperties_userName')]"
 					}
 				}
 			},
