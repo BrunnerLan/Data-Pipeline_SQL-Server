@@ -852,7 +852,7 @@
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
-							"allowDataTruncation": true,
+							"allowDataTruncation": false,
 							"treatBooleanAsNumber": false,
 							"dateFormat": "dd.MM.yyyy",
 							"dateTimeFormat": "dd.MM.yyyy HH:mm",
@@ -877,6 +877,8 @@
 				"name": "CopyDataToSQL2",
 				"description": "Copies data from Blob Storage to SQL database <visitors>",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CopyDataToSQL1",
