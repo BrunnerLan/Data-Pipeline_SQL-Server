@@ -87,7 +87,7 @@
 				}
 			},
 			{
-				"name": "Switch1",
+				"name": "SwitchCopyData",
 				"type": "Switch",
 				"dependsOn": [
 					{
