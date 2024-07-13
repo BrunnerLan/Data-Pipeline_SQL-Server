@@ -8,7 +8,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "AzureFunctionGymDeskToBlob",
+						"activity": "GymDeskToBlobStorage",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1046,7 +1046,8 @@
 				]
 			},
 			{
-				"name": "AzureFunctionGymDeskToBlob",
+				"name": "GymDeskToBlobStorage",
+				"description": "Time-controlled function",
 				"type": "AzureFunctionActivity",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
