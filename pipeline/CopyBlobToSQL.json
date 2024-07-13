@@ -88,6 +88,7 @@
 			},
 			{
 				"name": "SwitchCopyData",
+				"description": "=> Copy Data to SQL Server\n=> Copy Data to Sharepoint",
 				"type": "Switch",
 				"dependsOn": [
 					{
