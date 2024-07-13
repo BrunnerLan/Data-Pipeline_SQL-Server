@@ -827,7 +827,7 @@
 						"typeConversionSettings": {
 							"allowDataTruncation": false,
 							"treatBooleanAsNumber": false,
-							"dateFormat": "dd.MM.yyyy",
+							"dateFormat": "dd/MM./yyy",
 							"dateTimeFormat": "dd.MM.yyyy HH:mm",
 							"culture": "de-CH"
 						}
