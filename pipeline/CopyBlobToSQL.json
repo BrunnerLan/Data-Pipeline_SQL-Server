@@ -137,8 +137,8 @@
 								},
 								"sink": {
 									"name": "Age",
-									"type": "Byte",
-									"physicalType": "tinyint"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -197,8 +197,8 @@
 								},
 								"sink": {
 									"name": "Zip code",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -210,7 +210,7 @@
 								"sink": {
 									"name": "Gender",
 									"type": "String",
-									"physicalType": "varchar"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -382,11 +382,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Membership 4 Start  Date",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
@@ -533,8 +528,8 @@
 								},
 								"sink": {
 									"name": "Check-in code",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -754,25 +749,15 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Erste Zahlung am:",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
-									"name": "Erste Zahlung am:",
+									"name": "Erste Zahlung am",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
 							},
 							{
-								"source": {
-									"name": "Austritts Datum:",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
-									"name": "Austritts Datum:",
+									"name": "Austritts Datum",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -798,7 +783,7 @@
 								"sink": {
 									"name": "Familien Account",
 									"type": "String",
-									"physicalType": "varchar"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
