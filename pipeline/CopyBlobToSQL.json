@@ -269,8 +269,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 Credits",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -317,8 +317,8 @@
 								},
 								"sink": {
 									"name": "Membership 2 Credits",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -334,6 +334,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 3 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 3 Start Date",
 									"type": "String",
@@ -360,8 +365,8 @@
 								},
 								"sink": {
 									"name": "Membership 3 Credits",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -377,6 +382,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 4 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
@@ -403,8 +413,8 @@
 								},
 								"sink": {
 									"name": "Membership 4 Credits",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
