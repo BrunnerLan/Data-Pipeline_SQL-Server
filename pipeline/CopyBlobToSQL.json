@@ -44,6 +44,780 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "First Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "First Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Last Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Phone",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "2nd Phone",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2nd Phone",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Email",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Email",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "2nd Email",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2nd Email",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Date of birth",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date of birth",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Age",
+									"type": "Byte",
+									"physicalType": "tinyint"
+								}
+							},
+							{
+								"source": {
+									"name": "Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Zip code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Zip code",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Gender",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Gender",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Membership 1 Start Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 1 End Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 1 End Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 1 Credits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 1 Credits",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Membership 2 Start Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 2 End Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 2 End Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 2 Credits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 2 Credits",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Membership 3 Start Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 3 End Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 3 End Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 3 Credits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 3 Credits",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 4",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Membership 4 Start Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 4 End Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 4 End Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Membership 4 Credits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Membership 4 Credits",
+									"type": "Boolean",
+									"physicalType": "bit"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 1 Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 1 Number",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 2 Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 2 Number",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contacts 3 Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contacts 3 Number",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Joined",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Joined",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Check-in code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Check-in code",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Visit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Last Visit",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Payment",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Last Payment",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Login",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Last Login",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "Notes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Notes",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 1 Level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 1 Level",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 1 Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 1 Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 2 Level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 2 Level",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 2 Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 2 Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 3 Level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 3 Level",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 3 Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 3 Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 4",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 4 Level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 4 Level",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ranks 4 Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ranks 4 Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Beruf",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Beruf",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Erste Zahlung am:",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Erste Zahlung am:",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Austritts Datum:",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Austritts Datum:",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "AHV-Nummer",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AHV-Nummer",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Familien Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Familien Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Grund Kündigung",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Grund Kündigung",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Start Pausierung",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Start Pausierung",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ende Pausierung",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ende Pausierung",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": false,
