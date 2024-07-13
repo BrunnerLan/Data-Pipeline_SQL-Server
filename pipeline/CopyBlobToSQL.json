@@ -6,14 +6,7 @@
 				"name": "CopyDataToSQL1",
 				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "AzureFunctionGymDeskToBlob",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -45,13 +38,6 @@
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
-							{
-								"sink": {
-									"name": "ID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
 							{
 								"source": {
 									"name": "First Name",
@@ -305,6 +291,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 2 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 2 Start Date",
 									"type": "DateTime",
@@ -348,6 +339,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 3 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 3 Start Date",
 									"type": "DateTime",
@@ -391,6 +387,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 4 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "DateTime",
@@ -846,9 +847,8 @@
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
 							"treatBooleanAsNumber": false,
-							"dateFormat": "dd.MM.yyyy",
-							"dateTimeFormat": "dd.MM.yyyy HH:mm",
-							"culture": "de-CH"
+							"dateFormat": "dd/MM/yyyy",
+							"dateTimeFormat": "dd/MM/yyyy HH:mm"
 						}
 					}
 				},
@@ -861,198 +861,6 @@
 				"outputs": [
 					{
 						"referenceName": "SQLDatabaseSink_Members",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "CopyDataToSQL2",
-				"description": "Copies data from Blob Storage to SQL database <visitors>",
-				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "CopyDataToSQL1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.00:15:00",
-					"retry": 3,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": true,
-					"secureInput": true
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.visitors;",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "CSVFilesSource_Visitors",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SQLDatabaseSink_Visitors",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "CopyDataToSQL3",
-				"description": "Copies data from Blob Storage to SQL database <canceled>",
-				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "CopyDataToSQL2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.00:15:00",
-					"retry": 3,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": true,
-					"secureInput": true
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.canceled;",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "CSVFilesSource_Canceled",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SQLDatabaseSink_Canceled",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "CopyDataToSQL4",
-				"description": "Copies data from Blob Storage to SQL database <frozen>",
-				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "CopyDataToSQL3",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.00:15:00",
-					"retry": 3,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": true,
-					"secureInput": true
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.frozen;",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "CSVFilesSource_Frozen",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SQLDatabaseSink_Frozen",
 						"type": "DatasetReference"
 					}
 				]
