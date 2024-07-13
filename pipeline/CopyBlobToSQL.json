@@ -2601,10 +2601,17 @@
 				]
 			},
 			{
-				"name": "CopyDataToSQL3_copy1",
-				"description": "Copies data from Blob Storage to SQL database <canceled>",
+				"name": "CopyDataToSQL4",
+				"description": "Copies data from Blob Storage to SQL database <frozen>",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyDataToSQL3",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:15:00",
 					"retry": 3,
@@ -2626,11 +2633,15 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.members;",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -3438,13 +3449,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSVFilesSource_Canceled",
+						"referenceName": "CSVFilesSource_Frozen",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQLDatabaseSink_Canceled",
+						"referenceName": "CSVFilesSource_Frozen",
 						"type": "DatasetReference"
 					}
 				]
