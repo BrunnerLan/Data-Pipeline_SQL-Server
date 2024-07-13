@@ -1123,6 +1123,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 1 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 1 Start Date",
 									"type": "String",
@@ -1131,7 +1136,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 2 End Date",
+									"name": "Membership 1 End Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1167,7 +1172,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 1 Start  Date",
+									"name": "Membership 2 Start  Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1215,7 +1220,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 2 Start  Date",
+									"name": "Membership 3 Start  Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1262,6 +1267,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Membership 4 Start  Date",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Membership 4 Start Date",
 									"type": "String",
