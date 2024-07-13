@@ -3457,8 +3457,8 @@
 				]
 			},
 			{
-				"name": "CopyDataToSQL1_copy1",
-				"description": "Copies data from Blob Storage to SQL database <members>",
+				"name": "CopyDataToSharepoint",
+				"description": "Copies data from Blob Storage to Sharepoint <members>",
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
