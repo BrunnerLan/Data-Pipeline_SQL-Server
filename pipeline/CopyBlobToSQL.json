@@ -3468,6 +3468,19 @@
 					"secureInput": false
 				},
 				"userProperties": []
+			},
+			{
+				"name": "SetSiteURL",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Web1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"annotations": []
