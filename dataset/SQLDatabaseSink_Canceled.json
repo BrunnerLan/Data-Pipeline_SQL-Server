@@ -5,6 +5,9 @@
 			"referenceName": "AzureSqlDatabase_PowerBI",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "SQL Database Sink"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],

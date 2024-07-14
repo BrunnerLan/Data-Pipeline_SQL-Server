@@ -5,6 +5,9 @@
 			"referenceName": "BlobStoragePowerBI",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "CSV File Source"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
