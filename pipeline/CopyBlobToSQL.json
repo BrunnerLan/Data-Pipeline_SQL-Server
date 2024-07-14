@@ -3469,7 +3469,8 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "@concat(variables('varSiteURL'),'/drives')"
+					"method": "GET",
+					"url": ""
 				}
 			},
 			{
