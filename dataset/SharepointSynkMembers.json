@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "/sites/FileserverRaionDojo/Freigegebene%20Dokumente/ProductiveGround/001_Automated_Data_Analysis/007_Sharepoint/members.csv"
+				"relativeUrl": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo/Freigegebene%20Dokumente/ProductiveGround/001_Automated_Data_Analysis/007_Sharepoint/members.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
