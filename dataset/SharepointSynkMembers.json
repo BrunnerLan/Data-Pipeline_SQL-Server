@@ -1,0 +1,22 @@
+{
+	"name": "SharepointSynkMembers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpSharePointService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo/Freigegebene%20Dokumente/ProductiveGround/001_Automated_Data_Analysis/007_Sharepoint"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
