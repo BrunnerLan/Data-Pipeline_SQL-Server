@@ -3470,7 +3470,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": ""
+					"url": "@concat(variables('varSiteURL'),'/drives')"
 				}
 			},
 			{
