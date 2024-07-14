@@ -3467,7 +3467,10 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "@concat(^h"
+				}
 			},
 			{
 				"name": "SetSiteURL",
@@ -3477,7 +3480,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pipelineReturnValue",
+					"setSystemVariable": true
+				}
 			}
 		],
 		"annotations": []
