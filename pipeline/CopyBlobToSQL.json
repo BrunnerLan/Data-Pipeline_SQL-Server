@@ -3475,7 +3475,7 @@
 						"type": "ServicePrincipal",
 						"userTenant": "8b9e7144-c979-4d47-ba31-154797c2a8a3",
 						"username": "e2555e29-0eea-4713-8230-247147fe9a21",
-						"resource": "https://grap"
+						"resource": "https://graph.microsoft.com"
 					}
 				}
 			},
