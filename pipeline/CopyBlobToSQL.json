@@ -6,8 +6,6 @@
 				"name": "CopyDataToSQL1",
 				"description": "Copies data from Blob Storage to SQL database <members>",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "GymDeskToBlobStorage",
@@ -841,6 +839,8 @@
 				"name": "GymDeskToBlobStorage",
 				"description": "Time-controlled function",
 				"type": "AzureFunctionActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
