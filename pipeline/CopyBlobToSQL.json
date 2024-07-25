@@ -48,6 +48,13 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
 								"source": {
 									"name": "First Name",
 									"type": "String",
@@ -241,7 +248,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 1 Start  Date",
+									"name": "Membership 1 Start Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -289,7 +296,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 2 Start  Date",
+									"name": "Membership 2 Start Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -337,7 +344,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 3 Start  Date",
+									"name": "Membership 3 Start Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -385,7 +392,7 @@
 							},
 							{
 								"source": {
-									"name": "Membership 4 Start  Date",
+									"name": "Membership 4 Start Date",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -756,11 +763,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Erste Zahlung am:",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Erste Zahlung am",
 									"type": "String",
@@ -768,11 +770,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "Austritts Datum:",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "Austritts Datum",
 									"type": "String",
@@ -838,8 +835,7 @@
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
-							},
-							null
+							}
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
