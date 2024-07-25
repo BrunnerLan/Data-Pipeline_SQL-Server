@@ -818,7 +818,8 @@
 						"typeConversionSettings": {
 							"allowDataTruncation": false,
 							"treatBooleanAsNumber": false,
-							"dateFormat": "dd/MM/yyyy"
+							"dateFormat": "dd/MM/yyyy",
+							"dateTimeFormat": "dd/MM/yyyy"
 						}
 					}
 				},
