@@ -838,7 +838,8 @@
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
-							}
+							},
+							null
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
