@@ -820,7 +820,7 @@
 							"treatBooleanAsNumber": false,
 							"dateFormat": "dd/MM/yyyy",
 							"dateTimeFormat": {
-								"value": "case(\n    when(equals(columnName(), 'Date of birth'), 'dd/MM/yyyy'),\n    toString(toTimestamp(byName(columnName())), 'default format') // default case\n)",
+								"value": "case(\n    when(equals(columnName(), 'Date of birth'), 'dd/MM/yyyy'),\n    'dd/MM/yyyy'\n)",
 								"type": "Expression"
 							}
 						}
