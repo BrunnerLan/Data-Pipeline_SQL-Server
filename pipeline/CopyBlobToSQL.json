@@ -820,7 +820,7 @@
 							"treatBooleanAsNumber": false,
 							"dateFormat": "dd/MM/yyyy",
 							"dateTimeFormat": {
-								"value": "'dd/MM/yyyy'",
+								"value": "toString('dd/MM/yyyy')",
 								"type": "Expression"
 							}
 						}
