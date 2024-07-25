@@ -127,8 +127,8 @@
 								},
 								"sink": {
 									"name": "Date of birth",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -819,7 +819,8 @@
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": false,
-							"treatBooleanAsNumber": false
+							"treatBooleanAsNumber": false,
+							"dateFormat": "dd/MM/yyyy"
 						}
 					}
 				},
