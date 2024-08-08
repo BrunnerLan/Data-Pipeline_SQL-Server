@@ -754,6 +754,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Erste Zahlung am:",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Erste Zahlung am",
 									"type": "DateTime",
@@ -761,6 +766,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Austritts Datum:",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Austritts Datum",
 									"type": "DateTime",
