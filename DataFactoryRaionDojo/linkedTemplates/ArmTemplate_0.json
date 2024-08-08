@@ -4816,14 +4816,7 @@
 					{
 						"name": "DataToDB",
 						"type": "ExecuteDataFlow",
-						"dependsOn": [
-							{
-								"activity": "GymDeskToBlobStorage",
-								"dependencyConditions": [
-									"Skipped"
-								]
-							}
-						],
+						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -4849,31 +4842,6 @@
 							},
 							"traceLevel": "Fine"
 						}
-					},
-					{
-						"name": "GymDeskToBlobStorage",
-						"description": "Time-controlled function",
-						"type": "AzureFunctionActivity",
-						"state": "Inactive",
-						"onInactiveMarkAs": "Succeeded",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.00:15:00",
-							"retry": 3,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"functionName": "gymdeskSyncTrigger",
-							"headers": {},
-							"method": "GET"
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureFunctionGymdeskSync",
-							"type": "LinkedServiceReference"
-						}
 					}
 				],
 				"policy": {
@@ -4882,8 +4850,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/dataflow1')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureFunctionGymdeskSync')]"
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
 			]
 		},
 		{
