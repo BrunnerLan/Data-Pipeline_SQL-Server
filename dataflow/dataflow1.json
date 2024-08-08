@@ -174,11 +174,7 @@
 				"     preSQLs:['TRUNCATE TABLE dbo.members;'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
-				"     mapColumn(",
-				"          each(match(/* All input columns */true()),",
-				"               /* Input name */$$ = $$)",
-				"     )) ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}
