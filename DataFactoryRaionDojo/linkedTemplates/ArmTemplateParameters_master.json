@@ -30,7 +30,7 @@
 			"value": "manuel.brunner"
 		},
 		"HttpSharePointService_properties_typeProperties_url": {
-			"value": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo"
+			"value": "https://mindrevolutiongmbh527.sharepoint.com/"
 		},
 		"HttpSharePointService_properties_typeProperties_userName": {
 			"value": "manuel.brunner@raion-dojo.ch"

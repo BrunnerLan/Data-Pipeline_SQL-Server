@@ -41,7 +41,7 @@
 		},
 		"HttpSharePointService_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo"
+			"defaultValue": "https://mindrevolutiongmbh527.sharepoint.com/"
 		},
 		"HttpSharePointService_properties_typeProperties_userName": {
 			"type": "string",
@@ -137,6 +137,9 @@
 				"linkedServiceName": {
 					"referenceName": "BlobStoragePowerBI",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CSV File Source"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -435,6 +438,9 @@
 					"referenceName": "BlobStoragePowerBI",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CSV File Source"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -464,6 +470,9 @@
 					"referenceName": "BlobStoragePowerBI",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CSV File Source"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -478,7 +487,276 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "First Name",
+						"type": "String"
+					},
+					{
+						"name": "Last Name",
+						"type": "String"
+					},
+					{
+						"name": "Phone",
+						"type": "String"
+					},
+					{
+						"name": "2nd Phone",
+						"type": "String"
+					},
+					{
+						"name": "Email",
+						"type": "String"
+					},
+					{
+						"name": "2nd Email",
+						"type": "String"
+					},
+					{
+						"name": "Date of birth",
+						"type": "String"
+					},
+					{
+						"name": "Age",
+						"type": "String"
+					},
+					{
+						"name": "Address",
+						"type": "String"
+					},
+					{
+						"name": "City",
+						"type": "String"
+					},
+					{
+						"name": "State",
+						"type": "String"
+					},
+					{
+						"name": "Country",
+						"type": "String"
+					},
+					{
+						"name": "Zip code",
+						"type": "String"
+					},
+					{
+						"name": "Gender",
+						"type": "String"
+					},
+					{
+						"name": "Type",
+						"type": "String"
+					},
+					{
+						"name": "Membership",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 1 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 2 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 3 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 Start Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 End Date",
+						"type": "String"
+					},
+					{
+						"name": "Membership 4 Credits",
+						"type": "String"
+					},
+					{
+						"name": "Contacts",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 1",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 1 Number",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 2",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 2 Number",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 3",
+						"type": "String"
+					},
+					{
+						"name": "Contacts 3 Number",
+						"type": "String"
+					},
+					{
+						"name": "Status",
+						"type": "String"
+					},
+					{
+						"name": "Joined",
+						"type": "String"
+					},
+					{
+						"name": "Check-in code",
+						"type": "String"
+					},
+					{
+						"name": "Last Visit",
+						"type": "String"
+					},
+					{
+						"name": "Last Payment",
+						"type": "String"
+					},
+					{
+						"name": "Last Login",
+						"type": "String"
+					},
+					{
+						"name": "Notes",
+						"type": "String"
+					},
+					{
+						"name": "Ranks",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 1 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 2 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 3 Date",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4 Level",
+						"type": "String"
+					},
+					{
+						"name": "Ranks 4 Date",
+						"type": "String"
+					},
+					{
+						"name": "Beruf",
+						"type": "String"
+					},
+					{
+						"name": "Erste Zahlung am:",
+						"type": "String"
+					},
+					{
+						"name": "Austritts Datum:",
+						"type": "String"
+					},
+					{
+						"name": "AHV-Nummer",
+						"type": "String"
+					},
+					{
+						"name": "Familien Account",
+						"type": "String"
+					},
+					{
+						"name": "Grund Kündigung",
+						"type": "String"
+					},
+					{
+						"name": "Start Pausierung",
+						"type": "String"
+					},
+					{
+						"name": "Ende Pausierung",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/BlobStoragePowerBI')]"
@@ -492,6 +770,9 @@
 				"linkedServiceName": {
 					"referenceName": "BlobStoragePowerBI",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CSV File Source"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -521,6 +802,9 @@
 					"referenceName": "AzureSqlDatabase_PowerBI",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "SQL Database Sink"
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
@@ -541,6 +825,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase_PowerBI",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SQL Database Sink"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -563,9 +850,284 @@
 					"referenceName": "AzureSqlDatabase_PowerBI",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "SQL Database Sink"
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [],
+				"schema": [
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "First Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Last Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "2nd Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Email",
+						"type": "nvarchar"
+					},
+					{
+						"name": "2nd Email",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Date of birth",
+						"type": "date"
+					},
+					{
+						"name": "Age",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Address",
+						"type": "nvarchar"
+					},
+					{
+						"name": "City",
+						"type": "nvarchar"
+					},
+					{
+						"name": "State",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Country",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Zip code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Gender",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 1 Start Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 1 End Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 1 Credits",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 2 Start Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 2 End Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 2 Credits",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 3 Start Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 3 End Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 3 Credits",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 4",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Membership 4 Start Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 4 End Date",
+						"type": "date"
+					},
+					{
+						"name": "Membership 4 Credits",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 1 Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 2 Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contacts 3 Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Joined",
+						"type": "date"
+					},
+					{
+						"name": "Check-in code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Last Visit",
+						"type": "date"
+					},
+					{
+						"name": "Last Payment",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Last Login",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Notes",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 1 Level",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 1 Date",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 2 Level",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 2 Date",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 3 Level",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 3 Date",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 4",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 4 Level",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ranks 4 Date",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Beruf",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Erste Zahlung am",
+						"type": "date"
+					},
+					{
+						"name": "Austritts Datum",
+						"type": "date"
+					},
+					{
+						"name": "AHV-Nummer",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Familien Account",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Grund Kündigung",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Start Pausierung",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Ende Pausierung",
+						"type": "nvarchar"
+					}
+				],
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "members"
@@ -583,6 +1145,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase_PowerBI",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SQL Database Sink"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -603,7 +1168,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "CopyDataToSQL1",
+						"name": "CopyMembersToSQL",
 						"description": "Copies data from Blob Storage to SQL database <members>",
 						"type": "Copy",
 						"state": "Inactive",
@@ -644,6 +1209,7 @@
 								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
+							"enableSkipIncompatibleRow": false,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -727,8 +1293,8 @@
 										},
 										"sink": {
 											"name": "Date of birth",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -841,14 +1407,14 @@
 									},
 									{
 										"source": {
-											"name": "Membership 1 Start  Date",
+											"name": "Membership 1 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Membership 1 Start Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -859,8 +1425,8 @@
 										},
 										"sink": {
 											"name": "Membership 1 End Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -889,14 +1455,14 @@
 									},
 									{
 										"source": {
-											"name": "Membership 2 Start  Date",
+											"name": "Membership 2 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Membership 2 Start Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -907,8 +1473,8 @@
 										},
 										"sink": {
 											"name": "Membership 2 End Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -937,14 +1503,14 @@
 									},
 									{
 										"source": {
-											"name": "Membership 3 Start  Date",
+											"name": "Membership 3 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Membership 3 Start Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -955,8 +1521,8 @@
 										},
 										"sink": {
 											"name": "Membership 3 End Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -985,14 +1551,14 @@
 									},
 									{
 										"source": {
-											"name": "Membership 4 Start  Date",
+											"name": "Membership 4 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Membership 4 Start Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -1003,8 +1569,8 @@
 										},
 										"sink": {
 											"name": "Membership 4 End Date",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -1123,8 +1689,8 @@
 										},
 										"sink": {
 											"name": "Joined",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -1147,8 +1713,8 @@
 										},
 										"sink": {
 											"name": "Last Visit",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -1171,8 +1737,8 @@
 										},
 										"sink": {
 											"name": "Last Login",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "datetime"
 										}
 									},
 									{
@@ -1356,27 +1922,19 @@
 										}
 									},
 									{
-										"source": {
-											"name": "Erste Zahlung am:",
-											"type": "String",
-											"physicalType": "String"
-										},
+										"source": {},
 										"sink": {
 											"name": "Erste Zahlung am",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
-										"source": {
-											"name": "Austritts Datum:",
-											"type": "String",
-											"physicalType": "String"
-										},
+										"source": {},
 										"sink": {
 											"name": "Austritts Datum",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"type": "DateTime",
+											"physicalType": "date"
 										}
 									},
 									{
@@ -1443,7 +2001,9 @@
 								"typeConversion": true,
 								"typeConversionSettings": {
 									"allowDataTruncation": false,
-									"treatBooleanAsNumber": false
+									"treatBooleanAsNumber": false,
+									"dateFormat": "dd/MM/yyyy",
+									"dateTimeFormat": "dd/MM/yyyy"
 								}
 							}
 						},
@@ -1495,7 +2055,7 @@
 						"onInactiveMarkAs": "Succeeded",
 						"dependsOn": [
 							{
-								"activity": "CopyDataToSQL1",
+								"activity": "CopyMembersToSQL",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -1726,7 +2286,7 @@
 									},
 									{
 										"source": {
-											"name": "Membership 1 Start  Date",
+											"name": "Membership 1 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1774,7 +2334,7 @@
 									},
 									{
 										"source": {
-											"name": "Membership 2 Start  Date",
+											"name": "Membership 2 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1822,7 +2382,7 @@
 									},
 									{
 										"source": {
-											"name": "Membership 3 Start  Date",
+											"name": "Membership 3 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1870,7 +2430,7 @@
 									},
 									{
 										"source": {
-											"name": "Membership 4 Start  Date",
+											"name": "Membership 4 Start Date",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2236,30 +2796,6 @@
 										},
 										"sink": {
 											"name": "Beruf",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Erste Zahlung am:",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Erste Zahlung am",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Austritts Datum:",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Austritts Datum",
 											"type": "String",
 											"physicalType": "nvarchar"
 										}
@@ -4081,6 +4617,242 @@
 				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Canceled')]",
 				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Frozen')]",
 				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Frozen')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "CSVFilesSource_Members",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "SQLDatabaseSink_Members",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"scriptLines": [
+						"source(output(",
+						"          {First Name} as string,",
+						"          {Last Name} as string,",
+						"          Phone as string,",
+						"          {2nd Phone} as string,",
+						"          Email as string,",
+						"          {2nd Email} as string,",
+						"          {Date of birth} as date 'dd/MM/yyyy',",
+						"          Age as string,",
+						"          Address as string,",
+						"          City as string,",
+						"          State as string,",
+						"          Country as string,",
+						"          {Zip code} as string,",
+						"          Gender as string,",
+						"          Type as string,",
+						"          Membership as string,",
+						"          {Membership 1} as string,",
+						"          {Membership 1 Start Date} as string,",
+						"          {Membership 1 End Date} as string,",
+						"          {Membership 1 Credits} as string,",
+						"          {Membership 2} as string,",
+						"          {Membership 2 Start Date} as string,",
+						"          {Membership 2 End Date} as string,",
+						"          {Membership 2 Credits} as string,",
+						"          {Membership 3} as string,",
+						"          {Membership 3 Start Date} as string,",
+						"          {Membership 3 End Date} as string,",
+						"          {Membership 3 Credits} as string,",
+						"          {Membership 4} as string,",
+						"          {Membership 4 Start Date} as string,",
+						"          {Membership 4 End Date} as string,",
+						"          {Membership 4 Credits} as string,",
+						"          Contacts as string,",
+						"          {Contacts 1} as string,",
+						"          {Contacts 1 Number} as string,",
+						"          {Contacts 2} as string,",
+						"          {Contacts 2 Number} as string,",
+						"          {Contacts 3} as string,",
+						"          {Contacts 3 Number} as string,",
+						"          Status as string,",
+						"          Joined as string,",
+						"          {Check-in code} as string,",
+						"          {Last Visit} as string,",
+						"          {Last Payment} as string,",
+						"          {Last Login} as string,",
+						"          Notes as string,",
+						"          Ranks as string,",
+						"          {Ranks 1} as string,",
+						"          {Ranks 1 Level} as string,",
+						"          {Ranks 1 Date} as string,",
+						"          {Ranks 2} as string,",
+						"          {Ranks 2 Level} as string,",
+						"          {Ranks 2 Date} as string,",
+						"          {Ranks 3} as string,",
+						"          {Ranks 3 Level} as string,",
+						"          {Ranks 3 Date} as string,",
+						"          {Ranks 4} as string,",
+						"          {Ranks 4 Level} as string,",
+						"          {Ranks 4 Date} as string,",
+						"          Beruf as string,",
+						"          {Erste Zahlung am:} as string,",
+						"          {Austritts Datum:} as string,",
+						"          {AHV-Nummer} as string,",
+						"          {Familien Account} as string,",
+						"          {Grund Kündigung} as string,",
+						"          {Start Pausierung} as string,",
+						"          {Ende Pausierung} as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     input(",
+						"          ID as integer,",
+						"          {First Name} as string,",
+						"          {Last Name} as string,",
+						"          Phone as string,",
+						"          {2nd Phone} as string,",
+						"          Email as string,",
+						"          {2nd Email} as string,",
+						"          {Date of birth} as date,",
+						"          Age as string,",
+						"          Address as string,",
+						"          City as string,",
+						"          State as string,",
+						"          Country as string,",
+						"          {Zip code} as string,",
+						"          Gender as string,",
+						"          Membership as string,",
+						"          {Membership 1} as string,",
+						"          {Membership 1 Start Date} as date,",
+						"          {Membership 1 End Date} as date,",
+						"          {Membership 1 Credits} as string,",
+						"          {Membership 2} as string,",
+						"          {Membership 2 Start Date} as date,",
+						"          {Membership 2 End Date} as date,",
+						"          {Membership 2 Credits} as string,",
+						"          {Membership 3} as string,",
+						"          {Membership 3 Start Date} as date,",
+						"          {Membership 3 End Date} as date,",
+						"          {Membership 3 Credits} as string,",
+						"          {Membership 4} as string,",
+						"          {Membership 4 Start Date} as date,",
+						"          {Membership 4 End Date} as date,",
+						"          {Membership 4 Credits} as string,",
+						"          Contacts as string,",
+						"          {Contacts 1} as string,",
+						"          {Contacts 1 Number} as string,",
+						"          {Contacts 2} as string,",
+						"          {Contacts 2 Number} as string,",
+						"          {Contacts 3} as string,",
+						"          {Contacts 3 Number} as string,",
+						"          Status as string,",
+						"          Joined as date,",
+						"          {Check-in code} as string,",
+						"          {Last Visit} as date,",
+						"          {Last Payment} as string,",
+						"          {Last Login} as timestamp,",
+						"          Notes as string,",
+						"          Ranks as string,",
+						"          {Ranks 1} as string,",
+						"          {Ranks 1 Level} as string,",
+						"          {Ranks 1 Date} as string,",
+						"          {Ranks 2} as string,",
+						"          {Ranks 2 Level} as string,",
+						"          {Ranks 2 Date} as string,",
+						"          {Ranks 3} as string,",
+						"          {Ranks 3 Level} as string,",
+						"          {Ranks 3 Date} as string,",
+						"          {Ranks 4} as string,",
+						"          {Ranks 4 Level} as string,",
+						"          {Ranks 4 Date} as string,",
+						"          Beruf as string,",
+						"          {Erste Zahlung am} as date,",
+						"          {Austritts Datum} as date,",
+						"          {AHV-Nummer} as string,",
+						"          {Familien Account} as string,",
+						"          {Grund Kündigung} as string,",
+						"          {Start Pausierung} as string,",
+						"          {Ende Pausierung} as string",
+						"     ),",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError',",
+						"     mapColumn(",
+						"          each(match(/* All input columns */true()),",
+						"               /* Input name */$$ = $$)",
+						"     )) ~> sink1"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/CSVFilesSource_Members')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDatabaseSink_Members')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "dataflow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow1",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
 			]
 		},
 		{

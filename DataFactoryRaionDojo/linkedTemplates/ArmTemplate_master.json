@@ -41,7 +41,7 @@
 		},
 		"HttpSharePointService_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mindrevolutiongmbh527.sharepoint.com/sites/FileserverRaionDojo"
+			"defaultValue": "https://mindrevolutiongmbh527.sharepoint.com/"
 		},
 		"HttpSharePointService_properties_typeProperties_userName": {
 			"type": "string",
