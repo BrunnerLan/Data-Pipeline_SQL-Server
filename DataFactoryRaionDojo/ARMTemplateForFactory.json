@@ -3517,9 +3517,16 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "dataflow1",
+						"name": "DataToDB",
 						"type": "ExecuteDataFlow",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "GymDeskToBlobStorage",
+								"dependencyConditions": [
+									"Skipped"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -3545,6 +3552,31 @@
 							},
 							"traceLevel": "Fine"
 						}
+					},
+					{
+						"name": "GymDeskToBlobStorage",
+						"description": "Time-controlled function",
+						"type": "AzureFunctionActivity",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.00:15:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"functionName": "gymdeskSyncTrigger",
+							"headers": {},
+							"method": "GET"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureFunctionGymdeskSync",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -3553,7 +3585,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureFunctionGymdeskSync')]"
 			]
 		},
 		{
@@ -4746,20 +4779,20 @@
 						"          Type as string,",
 						"          Membership as string,",
 						"          {Membership 1} as string,",
-						"          {Membership 1 Start Date} as string,",
-						"          {Membership 1 End Date} as string,",
+						"          {Membership 1 Start Date} as date 'dd/MM/yyyy',",
+						"          {Membership 1 End Date} as date 'dd/MM/yyyy',",
 						"          {Membership 1 Credits} as string,",
 						"          {Membership 2} as string,",
-						"          {Membership 2 Start Date} as string,",
-						"          {Membership 2 End Date} as string,",
+						"          {Membership 2 Start Date} as date 'dd/MM/yyyy',",
+						"          {Membership 2 End Date} as date 'dd/MM/yyyy',",
 						"          {Membership 2 Credits} as string,",
 						"          {Membership 3} as string,",
-						"          {Membership 3 Start Date} as string,",
-						"          {Membership 3 End Date} as string,",
+						"          {Membership 3 Start Date} as date 'dd/MM/yyyy',",
+						"          {Membership 3 End Date} as date 'dd/MM/yyyy',",
 						"          {Membership 3 Credits} as string,",
 						"          {Membership 4} as string,",
-						"          {Membership 4 Start Date} as string,",
-						"          {Membership 4 End Date} as string,",
+						"          {Membership 4 Start Date} as date 'dd/MM/yyyy',",
+						"          {Membership 4 End Date} as date 'dd/MM/yyyy',",
 						"          {Membership 4 Credits} as string,",
 						"          Contacts as string,",
 						"          {Contacts 1} as string,",
@@ -4797,9 +4830,10 @@
 						"          {Start Pausierung} as string,",
 						"          {Ende Pausierung} as string",
 						"     ),",
-						"     allowSchemaDrift: true,",
+						"     allowSchemaDrift: false,",
 						"     validateSchema: false,",
-						"     ignoreNoFilesFound: false) ~> source1",
+						"     ignoreNoFilesFound: false,",
+						"     multiLineRow: true) ~> source1",
 						"source1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
@@ -4875,14 +4909,11 @@
 						"     insertable:true,",
 						"     updateable:false,",
 						"     upsertable:false,",
+						"     truncate:true,",
 						"     format: 'table',",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
-						"     errorHandlingOption: 'stopOnFirstError',",
-						"     mapColumn(",
-						"          each(match(/* All input columns */true()),",
-						"               /* Input name */$$ = $$)",
-						"     )) ~> sink1"
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 					]
 				}
 			},
