@@ -42,7 +42,7 @@
 			},
 			{
 				"name": "Date of birth",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Age",
@@ -82,11 +82,11 @@
 			},
 			{
 				"name": "Membership 1 Start Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 1 End Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 1 Credits",
@@ -98,11 +98,11 @@
 			},
 			{
 				"name": "Membership 2 Start Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 2 End Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 2 Credits",
@@ -114,11 +114,11 @@
 			},
 			{
 				"name": "Membership 3 Start Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 3 End Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 3 Credits",
@@ -130,11 +130,11 @@
 			},
 			{
 				"name": "Membership 4 Start Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 4 End Date",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Membership 4 Credits",
@@ -174,7 +174,7 @@
 			},
 			{
 				"name": "Joined",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Check-in code",
@@ -182,7 +182,7 @@
 			},
 			{
 				"name": "Last Visit",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Last Payment",
@@ -190,7 +190,9 @@
 			},
 			{
 				"name": "Last Login",
-				"type": "nvarchar"
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
 			},
 			{
 				"name": "Notes",
@@ -254,11 +256,11 @@
 			},
 			{
 				"name": "Erste Zahlung am",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "Austritts Datum",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "AHV-Nummer",
