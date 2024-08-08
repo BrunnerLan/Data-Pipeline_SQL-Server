@@ -44,7 +44,7 @@
 					"enableStaging": false,
 					"enableSkipIncompatibleRow": false,
 					"translator": {
-						"value": "@string('')",
+						"value": "@activity('GymDeskToBlobStorage').output",
 						"type": "Expression"
 					}
 				},
