@@ -22,7 +22,7 @@
 				"          {2nd Phone} as string,",
 				"          Email as string,",
 				"          {2nd Email} as string,",
-				"          {Date of birth} as date,",
+				"          {Date of birth} as date 'dd/MM',",
 				"          Age as string,",
 				"          Address as string,",
 				"          City as string,",
