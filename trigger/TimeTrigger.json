@@ -1,0 +1,28 @@
+{
+	"name": "TimeTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Week",
+				"interval": 15,
+				"startTime": "2024-08-08T18:07:00",
+				"timeZone": "W. Europe Standard Time",
+				"schedule": {
+					"minutes": [
+						0
+					],
+					"hours": [
+						18
+					],
+					"weekDays": [
+						"Thursday"
+					]
+				}
+			}
+		}
+	}
+}
