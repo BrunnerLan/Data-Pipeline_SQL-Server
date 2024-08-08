@@ -37,8 +37,6 @@
 				"name": "GymDeskToBlobStorage",
 				"description": "Time-controlled function",
 				"type": "AzureFunctionActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:15:00",
