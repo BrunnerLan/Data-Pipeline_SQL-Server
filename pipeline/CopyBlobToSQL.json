@@ -245,8 +245,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -257,8 +257,8 @@
 								},
 								"sink": {
 									"name": "Membership 1 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -293,8 +293,8 @@
 								},
 								"sink": {
 									"name": "Membership 2 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -305,8 +305,8 @@
 								},
 								"sink": {
 									"name": "Membership 2 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -341,8 +341,8 @@
 								},
 								"sink": {
 									"name": "Membership 3 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -353,8 +353,8 @@
 								},
 								"sink": {
 									"name": "Membership 3 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -389,8 +389,8 @@
 								},
 								"sink": {
 									"name": "Membership 4 Start Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -401,8 +401,8 @@
 								},
 								"sink": {
 									"name": "Membership 4 End Date",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -521,8 +521,8 @@
 								},
 								"sink": {
 									"name": "Joined",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -545,8 +545,8 @@
 								},
 								"sink": {
 									"name": "Last Visit",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -569,8 +569,8 @@
 								},
 								"sink": {
 									"name": "Last Login",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
@@ -751,6 +751,20 @@
 									"name": "Beruf",
 									"type": "String",
 									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Erste Zahlung am",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"sink": {
+									"name": "Austritts Datum",
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
